@@ -1,0 +1,10 @@
+.Header {
+    background-color: #00759c;
+    height: auto;
+}
+
+.Header img {
+    width: auto;
+    height: 68px;
+    padding: 1em;
+}

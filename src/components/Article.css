@@ -1,0 +1,12 @@
+.Article {
+    max-width: 800px;
+    align-self: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 1em;
+}
+
+.Article img {
+    max-width: 800px;
+}
