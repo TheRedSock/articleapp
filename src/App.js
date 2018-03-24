@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import ArticleList from './components/ArticleList';
+import Footer from './components/Footer';
 import axios from "axios";
 
 const API_URL = "api/articleapi/getarticles"
@@ -49,6 +50,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <ArticleList articles={this.state.articles} />
+        <Footer />
       </div>
     );
   }

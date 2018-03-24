@@ -10,7 +10,7 @@ function Article(props) {
         <div className="Article">
                 <h2>{props.title}</h2>
                 <p>{props.ingress}</p>
-                <a href={props.url}>Les Full Artikkel</a>
+                <a href={props.url} className="btn">Les Full Artikkel</a>
                 <img src={props.image} alt=""/>
                 <p className="date">{dateStr}</p>
         </div>
