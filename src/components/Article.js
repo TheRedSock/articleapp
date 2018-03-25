@@ -8,11 +8,13 @@ function Article(props) {
 
     return (
         <div className="Article">
-                <h2>{props.title}</h2>
-                <p>{props.ingress}</p>
-                <a href={props.url} className="btn">Les Full Artikkel</a>
                 <img src={props.image} alt=""/>
-                <p className="date">{dateStr}</p>
+                <div className="articleContainer">
+                    <h2>{props.title}</h2>
+                    <p>{props.ingress}</p>
+                    <a href={props.url} className="btn">Les Full Artikkel</a>
+                <p className="date">Gitt ut {dateStr}</p>
+                </div>
         </div>
     );
 }

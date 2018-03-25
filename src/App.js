@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import ArticleList from './components/ArticleList';
 import Footer from './components/Footer';
 import axios from "axios";
@@ -49,7 +50,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ArticleList articles={this.state.articles} />
+        <div className="container">
+          <ArticleList articles={this.state.articles} />
+        </div>
         <Footer />
       </div>
     );

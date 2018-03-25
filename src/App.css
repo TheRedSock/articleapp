@@ -1,37 +1,20 @@
+:root {
+    --primary: #EEE;
+    --dark: #555;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
 .App {
-    margin: 0;
-    color: #000;
-    line-height: 1.5;
-    text-align: left;
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-h1, h2, h3 {
-    margin: 0;
-    padding: 0 0 0 0;
-}
-
-p {
-    margin: 0;
-    padding:1em 0;
 }
 
 .btn {
-    display: inline-block;
-    background: #BBB;
-    color: #000;
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
     text-decoration: none;
-    padding: 1em 2em;
-    border: 1px solid #6666;
-    margin: .5em 0;
-}
-
-.btn-hover {
-    background: #eaeaea;
-    color: #333;
+    border:0;
 }

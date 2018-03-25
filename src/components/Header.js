@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <img src={logo} />            
+                <h1>Artikler</h1>      
             </div>
         );
     }
