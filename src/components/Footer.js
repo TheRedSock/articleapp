@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-import './Footer.css';
+import React from 'react';
+//import './Footer.css';
 
-class Footer extends Component {
-    render() {
-        return (
-            <div className="Footer">
-                <p>Torstein Røsok &copy; 2018</p>
-            </div>
-        );
-    }
+function Footer(props) {
+    return (
+        <div>
+            <footer className="mastfoot mt-auto text-center">
+                <div className="inner">
+                    <p>Torstein Røsok &copy; 2018</p>
+                    <p><a href="#">Tilbake til toppen</a></p>
+                </div>
+            </footer>
+        </div>
+
+    );
 }
 
 export default Footer;

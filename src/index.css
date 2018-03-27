@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html {
-  box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  color: var(--dark);
-}
-
-body {
-  background: var(--light);
-  margin: 30px 100px;
-  line-height: 1.4;
 }
