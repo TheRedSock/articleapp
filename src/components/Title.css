@@ -1,0 +1,17 @@
+.active-filter {
+    text-align: center;
+    align-self: center;
+    width: auto;
+    border: 1px solid;
+    padding: 0 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.inactive-filter {
+    text-align: center;
+    align-self: center;
+    width: auto;
+    border: 1px solid;
+    padding: 0 5px 5px 5px;
+    border: 0;
+}

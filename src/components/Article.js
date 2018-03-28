@@ -1,6 +1,5 @@
 import React from 'react';
 import DateJS from 'datejs';
-//import './Article.css';
 
 var imageStyle = {
     width: 'auto',
@@ -17,7 +16,7 @@ function Article(props) {
             <div className="col-md-12">
                 <div className="card flex-md-row mb-4 box-shadow h-md-250">
                     <div className="card-body d-flex flex-column align-items-start">
-                        <strong className="d-inline-block mb-2 text-primary">{ucTag}</strong>
+                        <strong className="d-inline-block mb-2 text-primary" onClick={props.filterTags}><a href="#">{ucTag}</a></strong>
                         <h3 className="mb-0"><a href={props.url} className="text-dark">{props.title}</a></h3>
                         <div className="mb-1 text-muted">{dateStr}</div>
                         <p className="card-text mb-auto">{props.ingress}</p>
