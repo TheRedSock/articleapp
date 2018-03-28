@@ -30,7 +30,7 @@ class App extends Component {
     this.removeFilter = this.removeFilter.bind(this);
   }
 
-  
+  // Grabs the article data from the api and stores it to the state.
   getApiContent() {
     axios
       .get(API_URL)
@@ -68,12 +68,14 @@ class App extends Component {
       });
   }
 
+  // Updates the state to store the inputs from the search field.
   updateSearch(e) {
     this.setState({
       search: e.target.value.substring(0,100)
     });
   }
-
+  
+  // This filters the article list by the tag selected from an article card, and adds a button that resets back to normal.
   filterTags(e) {
     if (this.state.articles) {
       this.setState({
@@ -86,7 +88,8 @@ class App extends Component {
       });
     }
   }
-
+  
+  // Resets the article list to the full collection from the api, and removes the button.
   removeFilter() {
     this.setState({
       articlesByTag: this.state.articles,
@@ -96,12 +99,16 @@ class App extends Component {
     })
   }
 
+  // Runs as component is being rendered, but before render().
   componentWillMount() {
     this.getApiContent();
   }
 
+  // Rendering function. Is called every time the state updates.
   render() {
     let filteredArticles = [];
+
+    {/* This filters the article list to only contain elements that matches string elements found on article cards. */}
     if (this.state.apiCallFinished) {
       filteredArticles = this.state.articlesByTag.filter( (a) => {
         return (a.title.toLowerCase().indexOf(this.state.search) !== -1) || 
@@ -110,6 +117,10 @@ class App extends Component {
       });
     }
 
+    {/* This creates all the UI elements. 
+     / Capitalized tags are UI components described in other files.
+     / values inside curly braces are properties or functions passed to the components.
+    */}
     return (
       <div>
         <Header search={this.state.search} updateSearch={this.updateSearch}/>

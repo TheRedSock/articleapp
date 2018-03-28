@@ -4,6 +4,7 @@ import Article from "./Article";
 function ArticleList(props) {  
     return (
         <div>
+            {/* Maps the content of the article array to individual Article components, sending in the data as properties. */}
             {props.articles.map(a => 
                 <Article 
                     key={a.id}
