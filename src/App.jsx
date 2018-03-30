@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import Title from './components/Title';
 import ArticleList from './components/ArticleList';
 import Footer from './components/Footer';
@@ -136,14 +135,13 @@ class App extends Component {
     return (
       <div>
         <Header search={this.state.search} updateSearch={this.updateSearch} />
-        <div className="container-fluid">
-          <div className="row">
-            <Sidebar />
-            <main className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" role="main">
-              <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <div>
+          <div>
+            <main role="main">
+              <div>
                 <Title
                   title={this.state.header}
-                  buttonClass={this.state.filterButton ? 'h2 col-sm-4 active-filter' : 'h2 col-sm-4 inactive-filter'}
+                  buttonClass={this.state.filterButton ? 'active-filter' : 'inactive-filter'}
                   filterButtonText={this.state.filterButtonText}
                   removeFilter={this.removeFilter}
                 />

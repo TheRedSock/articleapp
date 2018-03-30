@@ -20,11 +20,11 @@ function ArticleList(props) {
         />))
       }
       {props.error.length > 0 && (
-      <div className="card-body d-flex flex-column align-items-start">
+      <div>
         {props.error}
       </div>)}
       {props.articles.length === 0 && props.error.length === 0 && (
-      <div className="card-body d-flex flex-column align-items-start">
+      <div>
         Ingen artikler som passer søket.
       </div>)}
     </div>

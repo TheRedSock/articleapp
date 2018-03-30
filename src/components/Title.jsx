@@ -4,8 +4,8 @@ import './Title.css';
 
 function Title(props) {
   return (
-    <div className="row w-100">
-      <h1 className="h2 col-sm-8">{props.title}</h1>
+    <div>
+      <h1>{props.title}</h1>
       <a
         href="#root"
         className={props.buttonClass}

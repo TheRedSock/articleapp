@@ -3,8 +3,8 @@ import React from 'react';
 function Footer() {
   return (
     <div>
-      <footer className="mastfoot mt-auto text-center">
-        <div className="inner">
+      <footer>
+        <div>
           <p>Torstein Røsok &copy; 2018</p>
           <p><a href="#root">Tilbake til toppen</a></p>
         </div>

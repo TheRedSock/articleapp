@@ -17,12 +17,11 @@ function Article(props) {
   const ucTag = capitalizeFirstLetter(props.tag);
 
   return (
-    <div className="row mb-4">
-      <div className="col-md-12">
-        <div className="card flex-md-row mb-4 box-shadow h-md-250">
-          <div className="card-body d-flex flex-column align-items-start">
+    <div>
+      <div>
+        <div>
+          <div>
             <strong
-              className="d-inline-block mb-2 text-primary"
               onClick={props.filterTags}
               onKeyUp={props.filterTags}
               role="link"
@@ -30,12 +29,12 @@ function Article(props) {
             >
               <a href="#root">{ucTag}</a>
             </strong>
-            <h3 className="mb-0"><a href={props.url} className="text-dark" target="_blank">{props.title}</a></h3>
-            <div className="mb-1 text-muted">{dateStr}</div>
-            <p className="card-text mb-auto">{props.ingress}</p>
+            <h3><a href={props.url} target="_blank">{props.title}</a></h3>
+            <div>{dateStr}</div>
+            <p>{props.ingress}</p>
             <a href={props.url} target="_blank">Les mer...</a>
           </div>
-          <img src={props.image} alt="" className="card-img-right d-none d-md-block img-fluid" style={imageStyle} />
+          <img src={props.image} alt="" style={imageStyle} />
         </div>
       </div>
     </div>
