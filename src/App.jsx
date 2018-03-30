@@ -5,7 +5,6 @@ import Title from './components/Title';
 import ArticleList from './components/ArticleList';
 import Footer from './components/Footer';
 import './App.css';
-import './template.css';
 
 const API_URL = 'api/articleapi/getarticles';
 
