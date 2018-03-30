@@ -6,7 +6,14 @@ function Title(props) {
   return (
     <div className="row w-100">
       <h1 className="h2 col-sm-8">{props.title}</h1>
-      <a href="/" className={props.buttonClass} onClick={props.removeFilter} onKeyUp={props.removeFilter}>{props.filterButtonText}</a>
+      <a
+        href="#root"
+        className={props.buttonClass}
+        onClick={props.removeFilter}
+        onKeyUp={props.removeFilter}
+      >
+        {props.filterButtonText}
+      </a>
     </div>
   );
 }

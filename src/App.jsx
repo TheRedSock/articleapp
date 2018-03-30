@@ -78,15 +78,17 @@ class App extends Component {
     });
   }
 
-  // This filters the articles by the tag pressed on an article card.
-  // Also adds a button which resets the article list on click.
+  /*
+  / This filters the articles by the tag pressed on an article card,
+  / and adds a button which resets the article list on click.
+  */
   filterTags(e) {
     e.preventDefault();
     if (this.state.articles) {
       this.setState({
         articlesByTag: this.state.articles.filter(a =>
           a.tag.toLowerCase() === e.target.innerText.toLowerCase()),
-        header: `Artikler fra infotjenester på emne: ${e.target.innerText}`,
+        header: `Artikler fra infotjenester på emne: "${e.target.innerText}"`,
         filterButton: true,
         filterButtonText: 'Fjern emnefilter',
       });
@@ -108,8 +110,11 @@ class App extends Component {
   render() {
     let filteredArticles = [];
 
-    // This filters the articles to only contain letters matching strings found on article cards.
-    // Also manually changes a tag property to be gramatically correct (hacky solution).
+    /*
+    / This filters the articles to only contain letters matching strings found on article cards.
+    / Also manually changes a tag property to be gramatically correct (hacky solution).
+    / TODO: Use Promises instead of this state variable.
+    */
     if (this.state.apiCallFinished) {
       filteredArticles = this.state.articlesByTag.filter(a =>
         (a.title.toLowerCase().indexOf(this.state.search) !== -1) ||

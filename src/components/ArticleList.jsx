@@ -19,8 +19,14 @@ function ArticleList(props) {
           filterTags={props.filterTags}
         />))
       }
-      {props.error.length > 0 && (<div className="card-body d-flex flex-column align-items-start">{props.error}</div>)}
-      {props.articles.length === 0 && props.error.length === 0 && (<div className="card-body d-flex flex-column align-items-start">Ingen artikler som passer søket.</div>)}
+      {props.error.length > 0 && (
+      <div className="card-body d-flex flex-column align-items-start">
+        {props.error}
+      </div>)}
+      {props.articles.length === 0 && props.error.length === 0 && (
+      <div className="card-body d-flex flex-column align-items-start">
+        Ingen artikler som passer søket.
+      </div>)}
     </div>
   );
 }
