@@ -21,7 +21,7 @@ class App extends Component {
       apiCallFinished: false,
       search: '',
       filterButtonText: '',
-      buttonClass: 'h2 col-sm-2 inactive',
+      filterButton: false,
       error: 'Laster inn...',
       errorMsg: {},
     };
@@ -87,7 +87,7 @@ class App extends Component {
         articlesByTag: this.state.articles.filter(a =>
           a.tag.toLowerCase() === e.target.innerText.toLowerCase()),
         header: `Artikler fra infotjenester på emne: ${e.target.innerText}`,
-        buttonClass: 'h2 col-sm-4 active-filter',
+        filterButton: true,
         filterButtonText: 'Fjern emnefilter',
       });
     }
@@ -99,7 +99,7 @@ class App extends Component {
     this.setState({
       articlesByTag: this.state.articles,
       header: 'Artikler fra infotjenester',
-      buttonClass: 'h2 col-sm-4 inactive-filter',
+      filterButton: false,
       filterButtonText: '',
     });
   }
@@ -131,7 +131,7 @@ class App extends Component {
               <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <Title
                   title={this.state.header}
-                  buttonClass={this.state.buttonClass}
+                  buttonClass={this.state.filterButton ? 'h2 col-sm-4 active-filter' : 'h2 col-sm-4 inactive-filter'}
                   filterButtonText={this.state.filterButtonText}
                   removeFilter={this.removeFilter}
                 />
