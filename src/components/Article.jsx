@@ -24,7 +24,7 @@ function Article(props) {
             <strong className="d-inline-block mb-2 text-primary" onClick={props.filterTags} onKeyUp={props.filterTags} role="link" tabIndex="0">
               <a href="/">{ucTag}</a>
             </strong>
-            <h3 className="mb-0"><a href={props.url} className="text-dark">{props.title}</a></h3>
+            <h3 className="mb-0"><a href={props.url} className="text-dark" target="_blank">{props.title}</a></h3>
             <div className="mb-1 text-muted">{dateStr}</div>
             <p className="card-text mb-auto">{props.ingress}</p>
             <a href={props.url} target="_blank">Les mer...</a>
