@@ -100,7 +100,7 @@ h1 {
 }
 
 .article-tag {
-  color: var(--light);
+  color: #156999;
   font-weight: bold;
 }
 
@@ -204,7 +204,7 @@ footer a {
   }
 
   .title-container h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
   }
 
@@ -213,11 +213,11 @@ footer a {
     text-align: center;
   }
 
-  .article-card h1 a {
-    font-size: 1.5rem;
+  .article-card h1 {
+    font-size: 1.3rem;
   }
 
   .article-card p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
