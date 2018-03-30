@@ -27,7 +27,7 @@ function Article(props) {
             <h3 className="mb-0"><a href={props.url} className="text-dark">{props.title}</a></h3>
             <div className="mb-1 text-muted">{dateStr}</div>
             <p className="card-text mb-auto">{props.ingress}</p>
-            <a href={props.url}>Les mer...</a>
+            <a href={props.url} target="_blank">Les mer...</a>
           </div>
           <img src={props.image} alt="" className="card-img-right d-none d-md-block img-fluid" style={imageStyle} />
         </div>
