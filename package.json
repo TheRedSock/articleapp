@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^3.3.7",
     "datejs": "^1.0.0-rc3",
     "eslint": "^4.19.1",
     "npm": "^5.8.0",
