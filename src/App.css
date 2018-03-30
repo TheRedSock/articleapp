@@ -1,3 +1,7 @@
+h1 {
+  margin-bottom: 0;
+}
+
 .btn {
   background: var(--dark);
   color: var(--light);
@@ -94,17 +98,20 @@
 .article-tag {
   color: var(--light);
   font-weight: bold;
-  text-decoration: none;
 }
 
 .article-tag:hover {
+  color: var(--dark);
+}
+
+.article-title {
+  margin-bottom: 0;
+  color: var(--dark);
   text-decoration: none;
 }
 
-.article-card h1 a {
-  font-size: 2.2rem;
-  margin-bottom: 0;
-  color: var(--dark);
+.article-title:hover {
+  color: var(--light)
 }
 
 .article-date {

@@ -27,7 +27,7 @@ function Article(props) {
         >
           {ucTag}
         </a>
-        <h1><a href={props.url} target="_blank">{props.title}</a></h1>
+        <a href={props.url} target="_blank" className="article-title"><h1>{props.title}</h1></a>
         <a
           href="#root"
           onClick={props.sortDate}
