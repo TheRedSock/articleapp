@@ -6,20 +6,24 @@
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "datejs": "^1.0.0-rc3",
-    "jquery": "^3.3.1",
+    "eslint": "^4.19.1",
     "npm": "^5.8.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-responsive-sidebar": "^0.1.16",
-    "react-scripts": "1.1.1",
-    "react-sidebar": "^2.3.2"
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   },
   "proxy": "https://www.infotjenester.no/umbraco/"
 }
