@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'datejs';
+import './Article.css';
 
 const imageStyle = {
   width: 'auto',
@@ -17,26 +18,29 @@ function Article(props) {
   const ucTag = capitalizeFirstLetter(props.tag);
 
   return (
-    <div>
-      <div>
-        <div>
-          <div>
-            <strong
-              onClick={props.filterTags}
-              onKeyUp={props.filterTags}
-              role="link"
-              tabIndex="0"
-            >
-              <a href="#root">{ucTag}</a>
-            </strong>
-            <h3><a href={props.url} target="_blank">{props.title}</a></h3>
-            <div>{dateStr}</div>
-            <p>{props.ingress}</p>
-            <a href={props.url} target="_blank">Les mer...</a>
-          </div>
-          <img src={props.image} alt="" style={imageStyle} />
-        </div>
+    <div className="article-card-container">
+      <div className="article-card">
+        <a
+          className="article-tag"
+          onClick={props.filterTags}
+          onKeyPress={props.filterTags}
+          href="#root"
+        >
+          {ucTag}
+        </a>
+        <h1><a href={props.url} target="_blank">{props.title}</a></h1>
+        <a
+          href="#root"
+          onClick={props.sortDate}
+          onKeyPress={props.sortDate}
+          className="article-date"
+        >
+          {dateStr}
+        </a>
+        <p>{props.ingress}</p>
+        <a href={props.url} className="btn" target="_blank">Les mer...</a>
       </div>
+      <img src={props.image} alt="" style={imageStyle} className="article-image" />
     </div>
   );
 }
@@ -44,6 +48,7 @@ function Article(props) {
 Article.propTypes = {
   date: PropTypes.string.isRequired,
   filterTags: PropTypes.func.isRequired,
+  sortDate: PropTypes.func.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   ingress: PropTypes.string.isRequired,

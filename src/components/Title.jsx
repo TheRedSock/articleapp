@@ -4,13 +4,13 @@ import './Title.css';
 
 function Title(props) {
   return (
-    <div>
+    <div className="title-container">
       <h1>{props.title}</h1>
       <a
         href="#root"
         className={props.buttonClass}
         onClick={props.removeFilter}
-        onKeyUp={props.removeFilter}
+        onKeyPress={props.removeFilter}
       >
         {props.filterButtonText}
       </a>

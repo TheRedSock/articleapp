@@ -4,7 +4,7 @@ import Article from './Article';
 
 function ArticleList(props) {
   return (
-    <div>
+    <div className="article-container">
       {/* Maps the content of the articles to components, sending the data as properties. */}
       {props.articles.map(a =>
         (<Article
@@ -17,6 +17,7 @@ function ArticleList(props) {
           image={a.image}
           tag={a.tag}
           filterTags={props.filterTags}
+          sortDate={props.sortDate}
         />))
       }
       {props.error.length > 0 && (
@@ -34,6 +35,7 @@ function ArticleList(props) {
 ArticleList.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.object).isRequired,
   filterTags: PropTypes.func.isRequired,
+  sortDate: PropTypes.func.isRequired,
   error: PropTypes.string,
 };
 

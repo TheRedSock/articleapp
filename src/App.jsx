@@ -21,6 +21,7 @@ class App extends Component {
       search: '',
       filterButtonText: '',
       filterButton: false,
+      dateReversed: false,
       error: 'Laster inn...',
       errorMsg: {},
     };
@@ -28,6 +29,7 @@ class App extends Component {
     this.updateSearch = this.updateSearch.bind(this);
     this.filterTags = this.filterTags.bind(this);
     this.removeFilter = this.removeFilter.bind(this);
+    this.sortByDate = this.sortByDate.bind(this);
   }
 
   // Runs as component is being rendered, but before render().
@@ -70,10 +72,25 @@ class App extends Component {
       });
   }
 
+  // Reverses the article array based on its date value.
+  sortByDate(e) {
+    e.preventDefault();
+    const arr = this.state.articlesByTag;
+
+    arr.sort((a, b) => {
+      const c = new Date(a.date);
+      const d = new Date(b.date);
+      return this.state.dateReversed ? d - c : c - d;
+    });
+
+    this.setState({ articlesByTag: arr, dateReversed: !this.state.dateReversed });
+  }
+
   // Updates the state to store the inputs from the search field.
   updateSearch(e) {
+    e.target.value = e.target.value.toLowerCase();
     this.setState({
-      search: e.target.value.substring(0, 100),
+      search: e.target.value.substring(0, 50),
     });
   }
 
@@ -133,28 +150,23 @@ class App extends Component {
      / values inside curly braces are properties or functions passed to the components.
     */
     return (
-      <div>
+      <div className="wrapper">
         <Header search={this.state.search} updateSearch={this.updateSearch} />
-        <div>
-          <div>
-            <main role="main">
-              <div>
-                <Title
-                  title={this.state.header}
-                  buttonClass={this.state.filterButton ? 'active-filter' : 'inactive-filter'}
-                  filterButtonText={this.state.filterButtonText}
-                  removeFilter={this.removeFilter}
-                />
-              </div>
-              <ArticleList
-                articles={filteredArticles}
-                filterTags={this.filterTags}
-                error={this.state.error}
-              />
-              <Footer />
-            </main>
-          </div>
-        </div>
+        <main role="main">
+          <Title
+            title={this.state.header}
+            buttonClass={this.state.filterButton ? 'btn' : 'inactive'}
+            filterButtonText={this.state.filterButtonText}
+            removeFilter={this.removeFilter}
+          />
+          <ArticleList
+            articles={filteredArticles}
+            filterTags={this.filterTags}
+            error={this.state.error}
+            sortDate={this.sortByDate}
+          />
+        </main>
+        <Footer />
       </div>
     );
   }
