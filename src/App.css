@@ -95,6 +95,10 @@ h1 {
   justify-content: center;
 }
 
+.article-card h1 {
+  font-size: 1.8rem;
+}
+
 .article-tag {
   color: var(--light);
   font-weight: bold;
@@ -124,7 +128,7 @@ h1 {
 }
 
 .article-card p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .article-image {
@@ -205,9 +209,8 @@ footer a {
   }
 
   .title-container .btn {
-    width: 100%;
-    justify-self: end;
-    align-self: center;
+    justify-self: center;
+    text-align: center;
   }
 
   .article-card h1 a {
