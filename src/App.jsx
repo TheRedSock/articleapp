@@ -18,7 +18,7 @@ class App extends Component {
       header: 'Artikler fra Infotjenester',
       apiCallFinished: false,
       search: '',
-      filterButtonText: '',
+      filteredTag: '',
       filterButton: false,
       dateReversed: false,
       error: 'Laster inn...',
@@ -74,8 +74,8 @@ class App extends Component {
   // Reverses the article array based on its date value.
   sortByDate(e) {
     e.preventDefault();
-    const arr = this.state.articlesByTag;
 
+    const arr = this.state.articlesByTag;
     arr.sort((a, b) => {
       const c = new Date(a.date);
       const d = new Date(b.date);
@@ -88,9 +88,20 @@ class App extends Component {
   // Updates the state to store the inputs from the search field.
   updateSearch(e) {
     e.target.value = e.target.value.toLowerCase();
-    this.setState({
+
+    const newState = Object.assign({}, this.state, {
       search: e.target.value.substring(0, 50),
+      header: 'Artikler fra infotjenester',
     });
+
+    if (this.state.filterButton && e.target.value) {
+      newState.header = `${newState.header} på emne: "${this.state.filteredTag}", med søk: "${e.target.value}"`;
+    } else if (e.target.value === '' && this.state.filterButton) {
+      newState.header = `${newState.header} på emne: "${this.state.filteredTag}"`;
+    } else if (e.target.value && !this.state.filterButton) {
+      newState.header = `${newState.header} med søk: "${e.target.value}"`;
+    }
+    this.setState(newState);
   }
 
   /*
@@ -99,26 +110,40 @@ class App extends Component {
   */
   filterTags(e) {
     e.preventDefault();
+
     if (this.state.articles) {
-      this.setState({
+      const newState = Object.assign({}, this.state, {
         articlesByTag: this.state.articles.filter(a =>
           a.tag.toLowerCase() === e.target.innerText.toLowerCase()),
-        header: `Artikler fra infotjenester på emne: "${e.target.innerText}"`,
+        filteredTag: e.target.innerText,
+        header: 'Artikler fra infotjenester',
         filterButton: true,
-        filterButtonText: 'Fjern emnefilter',
       });
+
+      if (this.state.search) {
+        newState.header = `${newState.header} på emne: "${e.target.innerText}", med søk: "${this.state.search}"`;
+      } else {
+        newState.header = `${newState.header} på emne: "${e.target.innerText}"`;
+      }
+      this.setState(newState);
     }
   }
 
   // Resets the article list to the full collection from the api, and removes the button.
   removeFilter(e) {
     e.preventDefault();
-    this.setState({
+
+    const newState = Object.assign({}, this.state, {
       articlesByTag: this.state.articles,
+      filteredTag: '',
       header: 'Artikler fra infotjenester',
       filterButton: false,
-      filterButtonText: '',
     });
+
+    if (this.state.search) {
+      newState.header = `${newState.header} med søk: "${this.state.search}"`;
+    }
+    this.setState(newState);
   }
 
   // Rendering function. Is called every time the state updates.
@@ -128,7 +153,7 @@ class App extends Component {
     /*
     / This filters the articles to only contain letters matching strings found on article cards.
     / Also manually changes a tag property to be gramatically correct (hacky solution).
-    / TODO: Use Promises instead of this state variable.
+    / TODO: Use Promises instead of state boolean to check for API callback completion.
     */
     if (this.state.apiCallFinished) {
       filteredArticles = this.state.articlesByTag.filter(a =>
@@ -143,11 +168,7 @@ class App extends Component {
       }
     }
 
-    /*
-     / This creates all the UI elements.
-     / Capitalized tags are UI components described in other files.
-     / values inside curly braces are properties or functions passed to the components.
-    */
+    // The return function renders all of the UI.
     return (
       <div className="wrapper">
         <Header search={this.state.search} updateSearch={this.updateSearch} />
@@ -155,7 +176,6 @@ class App extends Component {
           <Title
             title={this.state.header}
             buttonClass={this.state.filterButton ? 'btn' : 'inactive'}
-            filterButtonText={this.state.filterButtonText}
             removeFilter={this.removeFilter}
           />
           <ArticleList

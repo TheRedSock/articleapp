@@ -11,7 +11,7 @@ function Title(props) {
         onClick={props.removeFilter}
         onKeyPress={props.removeFilter}
       >
-        {props.filterButtonText}
+        Fjern emnefilter
       </a>
     </div>
   );
@@ -21,7 +21,6 @@ Title.propTypes = {
   title: PropTypes.string.isRequired,
   buttonClass: PropTypes.string.isRequired,
   removeFilter: PropTypes.func.isRequired,
-  filterButtonText: PropTypes.string.isRequired,
 };
 
 export default Title;

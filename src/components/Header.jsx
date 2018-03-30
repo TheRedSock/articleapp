@@ -9,6 +9,8 @@ function Header(props) {
       <nav className="main-nav">
         <a
           href="https://infotjenester.no"
+          target="_blank"
+          rel="noopener noreferrer"
         ><img src={logo} alt="" />
         </a>
         <div className="input-container">

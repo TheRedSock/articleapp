@@ -22,7 +22,6 @@ function Article(props) {
         <a
           className="article-tag"
           onClick={props.filterTags}
-          onKeyPress={props.filterTags}
           href="#root"
         >
           {ucTag}
