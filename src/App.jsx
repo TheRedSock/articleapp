@@ -109,11 +109,18 @@ class App extends Component {
     let filteredArticles = [];
 
     // This filters the articles to only contain letters matching strings found on article cards.
+    // Also manually changes a tag property to be gramatically correct (hacky solution).
     if (this.state.apiCallFinished) {
       filteredArticles = this.state.articlesByTag.filter(a =>
         (a.title.toLowerCase().indexOf(this.state.search) !== -1) ||
         (a.tag.toLowerCase().indexOf(this.state.search) !== -1) ||
         (a.ingress.toLowerCase().indexOf(this.state.search) !== -1));
+
+      for (let i = 0; i < filteredArticles.length; i += 1) {
+        if (filteredArticles[i].tag === 'lonn') {
+          filteredArticles[i].tag = 'Lønn';
+        }
+      }
     }
 
     /*
