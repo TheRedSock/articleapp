@@ -11,11 +11,12 @@ function Header(props) {
           href="https://infotjenester.no"
           target="_blank"
           rel="noopener noreferrer"
-        ><img src={logo} alt="" />
+        ><img src={logo} alt="" className="animated slideInLeft" />
         </a>
         <div className="input-container">
-          <img src={searchIcon} alt="" />
+          <img src={searchIcon} alt="" className="animated flipInX" />
           <input
+            className="animated flipInX"
             type="text"
             placeholder="Søk"
             aria-label="søk"

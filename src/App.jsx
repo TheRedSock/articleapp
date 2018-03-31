@@ -5,6 +5,7 @@ import Title from './components/Title';
 import ArticleList from './components/ArticleList';
 import Footer from './components/Footer';
 import './App.css';
+import './animate.css';
 
 const API_URL = 'api/articleapi/getarticles';
 
@@ -175,7 +176,8 @@ class App extends Component {
         <main role="main">
           <Title
             title={this.state.header}
-            buttonClass={this.state.filterButton ? 'btn' : 'inactive'}
+            hasFilter={this.state.filterButton}
+            buttonClass={this.state.filterButton ? 'animated fadeIn btn' : ' animated fadeOut btn inactive'}
             removeFilter={this.removeFilter}
           />
           <ArticleList

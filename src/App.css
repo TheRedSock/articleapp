@@ -8,6 +8,8 @@ h1 {
   padding: 0.6rem 1.3rem;
   text-decoration: none;
   border: 0;
+  transition: background-color 0.5s ease-out;
+  transition: color 0.5 esase-out;
 }
 
 .btn:hover {
@@ -52,6 +54,7 @@ h1 {
   width: 20px;
   height: 20px;
   opacity: 0.4;
+  z-index: 1;
 }
 
 .title-container {
@@ -69,7 +72,7 @@ h1 {
 }
 
 .inactive {
-  display: none;
+  cursor: default;
 }
 
 .article-container {
@@ -102,6 +105,20 @@ h1 {
 .article-tag {
   color: #156999;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.article-tag::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width .3s;
+}
+
+.article-tag:hover::after {
+  width: 100%;
 }
 
 .article-tag:hover {
@@ -121,10 +138,20 @@ h1 {
 .article-date {
   margin: 0 0 10px 0;
   color: var(--dark);
+  text-decoration: none;
 }
 
-.article-date:hover {
-  text-decoration: none;
+.article-date::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width .3s;
+}
+
+.article-date:hover::after {
+  width: 100%;
 }
 
 .article-card p {
