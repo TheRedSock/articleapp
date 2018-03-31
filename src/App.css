@@ -129,6 +129,7 @@ h1 {
   margin-bottom: 0;
   color: var(--dark);
   text-decoration: none;
+  transition: color .3s ease;
 }
 
 .article-title:hover {
