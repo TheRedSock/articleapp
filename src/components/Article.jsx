@@ -18,7 +18,7 @@ function Article(props) {
 
   return (
     <div className="article-card-container animated fadeIn">
-      <div className="article-card ">
+      <div className="article-card">
         <a
           className="article-tag"
           onClick={props.filterTags}
