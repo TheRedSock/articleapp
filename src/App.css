@@ -189,7 +189,7 @@ footer a {
   .article-card-container {
     display: grid;
     grid-gap: 10px;
-    padding: 1.5rem;
+    padding: 1.3rem;
   }
 
   .article-image {
@@ -238,6 +238,10 @@ footer a {
   .title-container .btn {
     justify-self: center;
     text-align: center;
+  }
+
+  .article-card-container {
+    padding: 1rem;
   }
 
   .article-card h1 {
