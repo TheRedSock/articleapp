@@ -38,7 +38,7 @@ function Article(props) {
         <p>{props.ingress}</p>
         <a href={props.url} className="btn" target="_blank">Les mer...</a>
       </div>
-      <img src={props.image} alt="" style={imageStyle} className="article-image" />
+      <a href={props.url} target="_blank" className="article-image"><img src={props.image} alt="" style={imageStyle} /></a>
     </div>
   );
 }

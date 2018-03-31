@@ -162,6 +162,9 @@ h1 {
 .article-image {
   grid-area: article-image;
   justify-self: end;
+}
+
+.article-image img {
   box-shadow: var(--shadow);
 }
 
