@@ -8,7 +8,7 @@ function Title(props) {
       {props.hasFilter &&
         <a
           href="#root"
-          className={props.buttonClass}
+          className="animated fadeIn btn"
           onClick={props.removeFilter}
           onKeyPress={props.removeFilter}
         >
@@ -21,7 +21,6 @@ function Title(props) {
 
 Title.propTypes = {
   title: PropTypes.string.isRequired,
-  buttonClass: PropTypes.string.isRequired,
   removeFilter: PropTypes.func.isRequired,
   hasFilter: PropTypes.bool.isRequired,
 };

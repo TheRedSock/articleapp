@@ -73,10 +73,6 @@ h1 {
   align-self: center;
 }
 
-.inactive {
-  cursor: default;
-}
-
 .article-container {
   display: grid;
   grid-gap: 20px;

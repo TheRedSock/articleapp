@@ -177,7 +177,6 @@ class App extends Component {
           <Title
             title={this.state.header}
             hasFilter={this.state.filterButton}
-            buttonClass={this.state.filterButton ? 'animated fadeIn btn' : ' animated fadeOut btn inactive'}
             removeFilter={this.removeFilter}
           />
           <ArticleList
