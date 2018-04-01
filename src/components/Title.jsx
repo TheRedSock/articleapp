@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Title(props) {
   return (
-    <div className="title-container">
+    <section className="title-container">
       <h1 className="animated fadeIn">{props.title}</h1>
       {props.hasFilter &&
         <a
@@ -15,7 +15,7 @@ function Title(props) {
           Fjern Emnefilter
         </a>
       }
-    </div>
+    </section>
   );
 }
 

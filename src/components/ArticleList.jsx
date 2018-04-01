@@ -4,7 +4,7 @@ import Article from './Article';
 
 function ArticleList(props) {
   return (
-    <div className="article-container">
+    <section className="article-container">
       {/* Maps the content of the articles to components, sending the data as properties. */}
       {props.articles.map(a =>
         (<Article
@@ -28,7 +28,7 @@ function ArticleList(props) {
       <div>
         Ingen artikler som passer søket.
       </div>)}
-    </div>
+    </section>
   );
 }
 

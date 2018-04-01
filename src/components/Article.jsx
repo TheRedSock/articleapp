@@ -17,7 +17,7 @@ function Article(props) {
   const ucTag = capitalizeFirstLetter(props.tag);
 
   return (
-    <div className="article-card-container animated fadeIn">
+    <article className="article-card-container animated fadeIn">
       <div className="article-card">
         <a
           className="article-tag"
@@ -39,7 +39,7 @@ function Article(props) {
         <a href={props.url} className="btn" target="_blank">Les mer...</a>
       </div>
       <a href={props.url} target="_blank" className="article-image"><img src={props.image} alt="" style={imageStyle} /></a>
-    </div>
+    </article>
   );
 }
 
